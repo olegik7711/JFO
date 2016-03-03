@@ -1,0 +1,123 @@
+﻿<Window x:Class="JFO.Views.AboutFuelProperty"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JFO.Views"
+        mc:Ignorable="d"
+        Title="Информация о свойствах реактивного топлива" Height="600" Width="900" Loaded="Window_Loaded" WindowState="Maximized" Icon="/JFO;component/Images/help.png">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" >
+        <Grid Margin="10,10,10,40"  >
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="250" />
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Text="Содержание" HorizontalAlignment="Center" Grid.Row="0"
+                 FontFamily="Times New Roman" FontSize="18" FontWeight="ExtraBold"
+                 BorderThickness="0" Width="Auto" />
+            <GroupBox  Grid.Row="1" Grid.Column="0"
+                       FontFamily="Times New Roman" FontSize="16" FontWeight="ExtraBold"
+                      Background="LightBlue" Padding="0,10,0,0">
+             
+            <Grid x:Name="Soderganie"  Height="220" 
+              HorizontalAlignment="Left" Width="1100"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="320"/>
+                    <ColumnDefinition Width="320"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                  
+                   
+                </Grid.RowDefinitions>
+
+                <RadioButton x:Name="Plotnost" Content="Плотность"  Checked="Plotnost_Checked"
+                         Grid.Column="0" Grid.Row="0" Margin="10,0,0,0"/>
+                <RadioButton x:Name="FracSost" Content="Фракционный состав" 
+                          Grid.Column="0" Grid.Row="1" Checked="FracSost_Checked" Margin="10,0,0,0"/>
+                <RadioButton x:Name="Viascost" Content="Кинематическая вязкость"  Checked="Viascost_Checked"
+                          Grid.Column="0" Grid.Row="2" Margin="10,0,0,0"/>
+                <RadioButton x:Name="NizTepSgor" Content="Низшая теплота сгорания"  
+                              Grid.Column="0" Grid.Row="3" Checked="NizTepSgor_Checked" Margin="10,0,0,0"/>
+                <RadioButton x:Name="VNP" Content="Высота некоптящего пламени" 
+                              Grid.Column="0" Grid.Row="4" Checked="VNP_Checked" Margin="10,0,0,0"/>
+                <RadioButton x:Name="Kislotn" Content="Кислотность реактивного топлива" 
+                              Grid.Column="0" Grid.Row="5" Checked="Kislotn_Checked" Margin="10,0,0,0"/>
+                <RadioButton x:Name="Iod" Content="Йодное число реактивного топлива"  
+                              Grid.Column="0" Grid.Row="6" Checked="Iod_Checked" Margin="10,0,0,0"/>
+                <RadioButton x:Name="Vspishka" Content="Температура вспышки"  
+                              Grid.Column="0" Grid.Row="7" Checked="Vspishka_Checked" Margin="10,0,0,0"/>
+               
+               
+
+
+                <RadioButton x:Name="Aromat" Content="Объемная доля ароматических УВ"  
+                         Grid.Column="1" Grid.Row="0" Checked="Aromat_Checked" Margin="0,0,0,0" />
+                <RadioButton x:Name="FactSmoly" Content="Концентрация фактических смол"  
+                          Grid.Column="1" Grid.Row="1" Checked="FactSmoly_Checked"  />
+                <RadioButton x:Name="Sera" Content="Массовая доля общей серы" 
+                          Grid.Column="1" Grid.Row="2" Checked="Sera_Checked" />
+                <RadioButton x:Name="Merkaptan" Content="Массовая доля меркаптановой серы"  
+                              Grid.Column="1" Grid.Row="3" Checked="Merkaptan_Checked" />
+                <RadioButton x:Name="Serovodorod" Content="Массовая доля сероводорода"  
+                              Grid.Column="1" Grid.Row="4" Checked="Serovodorod_Checked" />
+                <RadioButton x:Name="Plastinka" Content="Испытание на медной пластинке" 
+                              Grid.Column="1" Grid.Row="5" Checked="Plastinka_Checked" />
+                <RadioButton x:Name="Zolnost" Content="Зольность"  
+                              Grid.Column="1" Grid.Row="6" Checked="Zolnost_Checked" />
+                    <RadioButton x:Name="NR21f2" Content="Противоизносные свойства" 
+                              Grid.Column="1" Grid.Row="7" Checked="NR21f2_Checked" />
+
+
+                    <RadioButton x:Name="Naftaliny" Content="Массовая доля нафталиновых УВ"  
+                         Grid.Column="2" Grid.Row="0" Checked="Naftaliny_Checked" Margin="0,0,0,0" />
+                <RadioButton x:Name="LCH" Content="Люминометрическое число"  
+                          Grid.Column="2" Grid.Row="1" Checked="LCH_Checked" />
+                <RadioButton x:Name="DTS" Content="Термоокислительная стабильность " 
+                          Grid.Column="2" Grid.Row="2" Checked="DTS_Checked" />
+               
+                <RadioButton x:Name="Electro" Content="Удельная электрическая проводимость"  
+                              Grid.Column="2" Grid.Row="3" Checked="Electro_Checked" />
+                <RadioButton x:Name="DavlenParov" Content="Давление насыщенных паров" 
+                              Grid.Column="2" Grid.Row="4" Checked="DavlenParov_Checked" />
+                <RadioButton x:Name="TSRT" Content="Термическая стабильность в статических условиях" 
+                              Grid.Column="2" Grid.Row="5" Checked="TSRT_Checked"  />
+                <RadioButton x:Name="Kristall" Content="Температура начала кристаллизации" 
+                              Grid.Column="2" Grid.Row="6" Checked="Kristall_Checked"  />
+              
+                
+
+            </Grid>
+            </GroupBox>
+            <TextBox x:Name="Oglavlenie" BorderThickness="0" 
+                Grid.ColumnSpan="3" Grid.Row="2" HorizontalAlignment="Center"
+                 FontFamily="Times New Roman" FontSize="18" FontWeight="ExtraBold"
+                 Width="Auto" Height="Auto" HorizontalContentAlignment="Center"/>
+            <TextBox x:Name="First" BorderThickness="0" Height="Auto" Width="Auto"
+                Grid.ColumnSpan="3" Grid.Row="4" HorizontalContentAlignment="Stretch" Margin="5,10,2,5" Background="White"/>
+            <Canvas Width="900" Height="300" Grid.Row="3" HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                           <Image x:Name="Img1" Source="/JFO;component/Images/RedCross.png" Width="300" Height="300" Margin="10" 
+                           MouseEnter="Img1_MouseEnter" MouseLeave="Img1_MouseLeave"/>
+                          <Image x:Name="Img2" Source="/JFO;component/Images/RedCross.png" Width="300" Height="300" Margin="10"
+                                 MouseEnter="Img2_MouseEnter" MouseLeave="Img2_MouseLeave"/>
+                    <Image x:Name="Img3" Source="/JFO;component/Images/RedCross.png" Width="300" Height="300" Margin="10"
+                           MouseEnter="Img3_MouseEnter" MouseLeave="Img3_MouseLeave"/>
+                </StackPanel>
+            </Canvas>
+         
+        </Grid>
+    </ScrollViewer>
+</Window>

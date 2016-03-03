@@ -1,0 +1,204 @@
+﻿<Page x:Class="JFO.Views.MopzDataBase"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JFO.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="900"
+      Title="MopzDataBase" Background="{StaticResource LidhtBlueFon}" Style="{StaticResource FontsStyle}" Loaded="Page_Loaded"  >
+    <DockPanel x:Name="MopzDataPanel">
+        <Border  DockPanel.Dock="Top" BorderThickness="2,0,0,2"  Height="70" BorderBrush="AliceBlue"
+                  >
+            <TextBlock Text="База данных" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                       FontSize="24" FontWeight="Normal" Margin="9,29,0,0"/>
+        </Border>
+        <GroupBox x:Name="MopzDataMainBox" DockPanel.Dock="Top" >
+            <GroupBox.Header>
+                <Label Content="Испытания МОПЗ" 
+                               FontSize="16" FontWeight="Bold"/>
+            </GroupBox.Header>
+            <Grid x:Name="MopzDataMainGrid" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.46*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.55*"/>
+                    <RowDefinition Height="0.62*"/>
+                </Grid.RowDefinitions>
+                <StackPanel x:Name="ForUpButton" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <Button x:Name="Zagruzka"  Width="25" Height="25"
+                                ToolTip="Загрузить базу данных" Margin="5,0,0,2" Click="Zagruzka_Click">
+                        <Image Source="/JFO;component/Images/LoadBase.png" Height="22" Width="22"
+                               />
+                        </Button>
+                    <Button x:Name="Updating"  Width="25" Height="25"
+                                ToolTip="Сохранить изменения в базе" Margin="5,0,0,2" Click="Updating_Click">
+                        <Image Source="/JFO;component/Images/UpdateBase.png" Height="22" Width="22"/>
+                        </Button>
+                </StackPanel>
+                <DataGrid x:Name="MopzDataGrid" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" 
+                          Height="200" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Visible" />
+                <GroupBox x:Name="DeleteMopzDataBox" Grid.Column="0" Grid.Row="2">
+                          
+                    <GroupBox.Header>
+                        <Label Content="Удалить строку" 
+                               FontSize="16" FontWeight="Bold"/>
+                    </GroupBox.Header>
+                    <Grid x:Name="DeleteMopzDataGrid" HorizontalAlignment="Left">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            </Grid.RowDefinitions>
+                        <Label x:Name="DelMopzDataLabel" Grid.Column="0" Grid.Row="0"
+                               Grid.ColumnSpan="2" Content="Введите ID строки для удаления"/>
+                        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+                        <TextBox x:Name="DelMopzDataTxt"  IsTabStop="False" MinWidth="164"/>
+                            <Button x:Name="DelMopzDataBtn" 
+                                HorizontalAlignment="Left" Margin="2,0,2,2" Click="DelMopzDataBtn_Click" ToolTip="Удалить строку">
+                                <Image Source="/JFO;component/Images/cut.png" Height="18" Width="20"/>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                    
+                </GroupBox>
+                <GroupBox x:Name="FindMopzData" Grid.Column="1" Grid.Row="2"
+                          >
+                    <GroupBox.Header>
+                        <Label Content="Найти запись" 
+                               FontSize="16" FontWeight="Bold"/>
+                    </GroupBox.Header>
+                    <Grid x:Name="FindMopzDataGrid" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                           </Grid.RowDefinitions>
+                     <Label x:Name="FindFieldMopzLabel"  Grid.Column="0" Grid.Row="0"
+                            Content="Выберите столбец для поиска"/>
+                        <ComboBox x:Name="FindFieldMopzDataCombo" Grid.Column="1" Grid.Row="0" Height="20">
+                            <ComboBoxItem Content="ID"/>
+                            <ComboBoxItem Content="Date"/>
+                            <ComboBoxItem Content="Name"/>
+                            <ComboBoxItem Content="NR21F2"/>
+                            <ComboBoxItem Content="DTS_ball"/>
+                            <ComboBoxItem Content="DTS_zabivka"/>
+                            <ComboBoxItem Content="JFTOT_ball"/>
+                            <ComboBoxItem Content="JFTOT_zabivka"/>
+                            <ComboBoxItem Content="VNP"/>
+                            <ComboBoxItem Content="Fact_smoly"/>
+                            <ComboBoxItem Content="Aromatica"/>
+                            <ComboBoxItem Content="LCH"/>
+                            <ComboBoxItem Content="MSEP"/>     
+                        </ComboBox>
+                        <Label x:Name="FindWordMopzDataLabel" Grid.Column="0" Grid.Row="1"
+                               Content="Введите слово для поиска"/>
+                        <Grid Grid.Column="1" Grid.Row="1" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.45*"/>
+                            </Grid.ColumnDefinitions>
+                        <TextBox x:Name="FindWordMopzDataTxt"  MaxWidth="400" MinWidth="197" Margin="0,2,2,2"
+                                 Grid.Column="0" HorizontalAlignment="Left"/>
+                            <Button x:Name="FindMopzDataBtn"  HorizontalAlignment="Right" Grid.Column="1"
+                               Margin="2,0,2,2" Click="FindMopzDataBtn_Click" ToolTip="Найти запись">
+                                <Image Source="/JFO;component/Images/find.png" Height="18" Width="20"/>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="AddFileMopzDataBox" Grid.Column="0" Grid.Row="3"
+                          >
+                    <GroupBox.Header>
+                        <Label Content="Добавить/извлечь файл"
+                               FontSize="16" FontWeight="Bold"/>
+                    </GroupBox.Header>
+                    <Grid x:Name="AddFileMopzDataGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label x:Name="AddFileMopzDataLabel" Grid.Column="0" Grid.Row="0"
+                               Grid.ColumnSpan="2" Content="Введите ID строки "/>
+                        <TextBox x:Name="AddFileMopzDataTxt" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" MinWidth="164"/>
+                        <StackPanel x:Name="ForAddFileButton" Grid.Column="0" Grid.Row="2"
+                                    Orientation="Horizontal" Grid.ColumnSpan="2" Margin="3,0,0,0">
+                            <Button x:Name="AddFileMopzDataBtn" 
+                                Click="AddFileMopzDataBtn_Click" ToolTip="Добавить файл в базу данных">
+                                <Image Source="/JFO;component/Images/FileIn.png" Height="18" Width="20"/>
+                            </Button>
+                            <Button x:Name="ExtractFileMopzDataBtn" 
+                                 Click="ExtractFileMopzDataBtn_Click" ToolTip="Извлечь файл из базы данных">
+                                <Image Source="/JFO;component/Images/FileEx.png" Height="18" Width="20"/>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+
+                </GroupBox>
+                <GroupBox x:Name="SortMopzData" Grid.Column="1" Grid.Row="3">
+
+                    <GroupBox.Header>
+                        <Label Content="Сортировать записи"
+                               FontSize="16" FontWeight="Bold"/>
+                    </GroupBox.Header>
+                    <Grid x:Name="SortMopzDataGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label x:Name="SortFieldMopzLabel"  Grid.Column="0" Grid.Row="0"
+                            Content="Выберите столбец"/>
+                        <ComboBox x:Name="SortFieldMopzDataCombo" Grid.Column="1" Grid.Row="0" Height="20">
+                            <ComboBoxItem Content="ID"/>
+                            <ComboBoxItem Content="Date"/>
+                            <ComboBoxItem Content="Name"/>
+                            <ComboBoxItem Content="NR21F2"/>
+                            <ComboBoxItem Content="DTS_ball"/>
+                            <ComboBoxItem Content="DTS_zabivka"/>
+                            <ComboBoxItem Content="JFTOT_ball"/>
+                            <ComboBoxItem Content="JFTOT_zabivka"/>
+                            <ComboBoxItem Content="VNP"/>
+                            <ComboBoxItem Content="Fact_smoly"/>
+                            <ComboBoxItem Content="Aromatica"/>
+                            <ComboBoxItem Content="LCH"/>
+                            <ComboBoxItem Content="MSEP"/>
+                        </ComboBox>
+                        <Label x:Name="SortWordMopzDataLabel" Grid.Column="0" Grid.Row="1"
+                               Content="Выберите направление"/>
+                        <ComboBox x:Name="SortNapravlenieMopzDataCombo" Grid.Column="1" Grid.Row="1" Height="20">
+                            <ComboBoxItem Content="По возрастанию"/>
+                            <ComboBoxItem Content="По убыванию"/>
+                        </ComboBox>
+                        <Button x:Name="SortMopzDataBtn" Grid.Column="1" Grid.Row="2"
+                                Click="SortMopzDataBtn_Click" ToolTip="Сортировать записи">
+                           
+                                <Image Source="/JFO;component/Images/sort.png" Height="18" Width="20"/>
+                        </Button>
+                        
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </GroupBox>
+    </DockPanel>
+</Page>

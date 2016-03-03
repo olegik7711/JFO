@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B29B98F-0991-4F86-A4FC-A6442C0A00A0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JFO</RootNamespace>
+    <AssemblyName>JFO</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Classes\SQLConnect.cs" />
+    <Compile Include="Classes\ToCalculate.cs" />
+    <Compile Include="Views\AboutFuelProperty.xaml.cs">
+      <DependentUpon>AboutFuelProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AboutMethods.xaml.cs">
+      <DependentUpon>AboutMethods.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AboutProgram.xaml.cs">
+      <DependentUpon>AboutProgram.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Calculator.xaml.cs">
+      <DependentUpon>Calculator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CheckParol.xaml.cs">
+      <DependentUpon>CheckParol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MopzDataBase.xaml.cs">
+      <DependentUpon>MopzDataBase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OtchetyDataBase.xaml.cs">
+      <DependentUpon>OtchetyDataBase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProtocolGost10227.xaml.cs">
+      <DependentUpon>ProtocolGost10227.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProtocolMopz.xaml.cs">
+      <DependentUpon>ProtocolMopz.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Resources\BaseRecource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\AboutFuelProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AboutMethods.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AboutProgram.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Calculator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CheckParol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MopzDataBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OtchetyDataBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProtocolGost10227.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProtocolMopz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Calculator.png" />
+    <Resource Include="Images\copy.png" />
+    <Resource Include="Images\cut.png" />
+    <Resource Include="Images\DataBase.png" />
+    <Resource Include="Images\Exit.png" />
+    <Resource Include="Images\FileEx.png" />
+    <Resource Include="Images\FileIn.png" />
+    <Resource Include="Images\find.png" />
+    <Resource Include="Images\help.png" />
+    <Resource Include="Images\print.png" />
+    <Resource Include="Images\RedCross.png" />
+    <Resource Include="Images\save.png" />
+    <Resource Include="Images\SaveInFile.png" />
+    <Resource Include="Images\sort.png" />
+    <Resource Include="Images\zero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Protocol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LoadBase.png" />
+    <Resource Include="Images\MopzBase.png" />
+    <Resource Include="Images\UpdateBase.png" />
+    <Resource Include="Images\VniiBase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\plotnost1.jpg" />
+    <Resource Include="Images\plotnost2.jpg" />
+    <Resource Include="Images\plotnost3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Viascost1.jpg" />
+    <Resource Include="Images\viascost2.jpg" />
+    <Resource Include="Images\viscost3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NizTeplSgor1.jpg" />
+    <Resource Include="Images\NizTeplSgor2.jpg" />
+    <Resource Include="Images\NizTeplSgor3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\kislotnost1.jpg" />
+    <Resource Include="Images\kislotnost2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\frsos1.jpg" />
+    <Resource Include="Images\frsos2.jpg" />
+    <Resource Include="Images\frsos3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\vnp1.jpg" />
+    <Resource Include="Images\vnp2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\iod1.jpg" />
+    <Resource Include="Images\iod2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\vspishk1.jpg" />
+    <Resource Include="Images\vspishk2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\kristall1.jpg" />
+    <Resource Include="Images\Kristall2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tsrt1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arom1.jpg" />
+    <Resource Include="Images\arom2.jpg" />
+    <Resource Include="Images\arom3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\factsmol1.jpg" />
+    <Resource Include="Images\factsmol2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\sera1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\merkaptan1.jpg" />
+    <Resource Include="Images\merkaptan2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\serovodorod1.jpg" />
+    <Resource Include="Images\serovodorod2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\plastina1.jpg" />
+    <Resource Include="Images\plastina2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\zolnost1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\naftalin1.jpg" />
+    <Resource Include="Images\naftalin2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\lch1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\jftot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\electro1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\davlen1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\isnos1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\calc1.jpg" />
+    <Resource Include="Images\calc2.jpg" />
+    <Resource Include="Images\calc3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\prot1.jpg" />
+    <Resource Include="Images\prot2.jpg" />
+    <Resource Include="Images\prot3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Base1.jpg" />
+    <Resource Include="Images\Base2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CheckPoint.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

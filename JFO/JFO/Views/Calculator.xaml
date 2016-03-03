@@ -1,0 +1,151 @@
+﻿<Page x:Class="JFO.Views.Calculator"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JFO.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="900"
+      Title="Calculator" Background="{StaticResource LidhtBlueFon}" Style="{StaticResource FontsStyle}" Loaded="Page_Loaded">
+
+    <DockPanel>
+        <Border  DockPanel.Dock="Top" BorderThickness="2,0,0,2"  Height="70" BorderBrush="AliceBlue"
+                 >
+            <TextBlock Text="Калькулятор" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                      FontSize="24" FontWeight="Normal" Margin="9,29,0,0"/>
+        </Border>
+        <Grid x:Name="CulculatorGrid" DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.7*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <GroupBox x:Name="PropertyBox"  Grid.Column="0" Margin="5">
+                <GroupBox.Header>
+                    <Label Content="Рассчитать" 
+                       FontSize="16" FontWeight="Bold"/>
+                </GroupBox.Header>
+                <Grid x:Name="RasschetGrid" HorizontalAlignment="Left">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Plotnost20Label" Grid.Column="0" Grid.Row="0" Content="Плотность при 20°С, г/cм^3"/>
+                    <Label x:Name="Plotnost15Label" Grid.Column="0" Grid.Row="1" Content="Плотность при 15°С , г/cм^3"/>
+                    <Label x:Name="PlotnostAPILabel" Grid.Column="0" Grid.Row="2" Content="Плотность API, градусы API"/>
+                    <Label x:Name="VNPLabel" Grid.Column="0" Grid.Row="3" Content="Высота некоптящего пламени, мм" />
+                    <Label x:Name="LCHLabel" Grid.Column="0" Grid.Row="4" Content="Люминометрическое число"/>
+                    <Label x:Name="NizTeplotSgorLabel" Grid.Column="0" Grid.Row="5" Content="Низшая теплота сгорания, кДж/кг"/>
+                    <Label x:Name="PoverhnNatiajLabel" Grid.Column="0" Grid.Row="6" Content="Поверхностное натяжение, н/м"/>
+                    <Label x:Name="PokazatelPrelomleniaLabel" Grid.Column="0" Grid.Row="7" Content="Показатель преломления"/>
+                    <Label x:Name="MolarnajaMassaLabel" Grid.Column="0" Grid.Row="8" Content="Молярная масса, г/моль"/>
+                    <Label x:Name="MolniyObiemLabel" Grid.Column="0" Grid.Row="9" Content="Мольный объем, л/моль"/>
+                    <Label x:Name="VodorodLabel" Grid.Column="0" Grid.Row="10" Content="Содержание водорода,% масс"/>
+                    <Label x:Name="UglerodLabel" Grid.Column="0" Grid.Row="11" Content="Содержание углерода,% масс"/>
+                    <Label x:Name="FactorNasaLabel" Grid.Column="0" Grid.Row="12" Content="Коэфициент нагарообразования" ToolTip="Фактор NASA"/>
+                    <TextBox x:Name="Plotnost20Text" Grid.Column="1" Grid.Row="0" 
+                             PreviewTextInput="Plotnost20Text_PreviewTextInput" HorizontalContentAlignment="Right" />
+                    <TextBox x:Name="Plotnost15Text" Grid.Column="1" Grid.Row="1"
+                             PreviewTextInput="Plotnost15Text_PreviewTextInput" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="PlotnostAPIText" Grid.Column="1" Grid.Row="2" 
+                             PreviewTextInput="PlotnostAPIText_PreviewTextInput" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="VNPText" Grid.Column="1" Grid.Row="3" 
+                             PreviewTextInput="VNPText_PreviewTextInput" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="LCHText" Grid.Column="1" Grid.Row="4" 
+                             PreviewTextInput="LCHText_PreviewTextInput" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="NizTeplotSgorText" Grid.Column="1" Grid.Row="5" 
+                             PreviewTextInput="NizTeplotSgorText_PreviewTextInput" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="PoverhnNatiajText" Grid.Column="1" Grid.Row="6" 
+                             PreviewTextInput="PoverhnNatiajText_PreviewTextInput" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="PokazatelPrelomleniaText" Grid.Column="1" Grid.Row="7"
+                             PreviewTextInput="PokazatelPrelomleniaText_PreviewTextInput" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="MoularnajaMassaText" Grid.Column="1" Grid.Row="8" 
+                             PreviewTextInput="MoularnajaMassaText_PreviewTextInput" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="MolniyObiemText" Grid.Column="1" Grid.Row="9" 
+                             PreviewTextInput="MolniyObiemText_PreviewTextInput" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="VodorodText" Grid.Column="1" Grid.Row="10" 
+                             PreviewTextInput="VodorodText_PreviewTextInput" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="UglerodText" Grid.Column="1" Grid.Row="11" 
+                             PreviewTextInput="UglerodText_PreviewTextInput" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="FactorNasaText" Grid.Column="1" Grid.Row="12" 
+                             PreviewTextInput="FactorNasaText_PreviewTextInput" HorizontalContentAlignment="Right"/>
+
+                    <StackPanel x:Name="ForCalculateButtons" Orientation="Horizontal"
+                                HorizontalAlignment="Right" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="2">
+                        <Button x:Name="CulculateBtn" Click="CulculateBtn_Click" ToolTip="Рассчитать  ">
+                            <Image Source="/JFO;component/Images/Calculator.png" Height="18" Width="20"/>
+                        </Button>
+                        <Button x:Name="ZeroBtn" ToolTip="Обнулить" Click="ZeroBtn_Click">
+                            <Image Source="/JFO;component/Images/zero.png" Height="18" Width="20"/>
+                        </Button>
+                        <Button x:Name="SaveInFileBtn" ToolTip="Сохранить расчет в текстовый файл" Click="SaveInFileBtn_Click">
+                            <Image Source="/JFO;component/Images/SaveInFile.png" />
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="GraficPlotnostyBox"  Grid.Column="1" Margin="5" >
+                <GroupBox.Header>
+                    <Label Content="График плотности" 
+                       FontSize="16" FontWeight="Bold"/>
+                </GroupBox.Header>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <Canvas x:Name="GraficPlotnostyCanvas" Background="White" Width="600" Height="550" 
+                            MouseMove="GraficPlotnostyCanvas_MouseMove" ClipToBounds="True">
+                        <Label x:Name="DinamicPlotnostLbl" Canvas.Left="300" Canvas.Bottom="10"
+                             Content="Плотность:"/>
+                        <TextBox x:Name="DinamicPlotnostTxt" Canvas.Bottom="10" Canvas.Left="365"/>
+                        <Label x:Name="DinamicTemperLbl" Canvas.Left="110" Canvas.Bottom="10"
+                             Content="Температура:"/>
+                        <TextBox x:Name="DinamicTemperTxt" Canvas.Bottom="10" Canvas.Left="190"/>
+                        <Label Canvas.Left="15" Canvas.Bottom="48" Content="-40"/>
+                        <Label Canvas.Left="15" Canvas.Bottom="88" Content="-30"/>
+                        <Label Canvas.Left="15" Canvas.Bottom="128" Content="-20"/>
+                        <Label Canvas.Left="15" Canvas.Bottom="168" Content="-10"/>
+                        <Label Canvas.Left="25" Canvas.Bottom="208" Content="0"/>
+                        <Label Canvas.Left="20" Canvas.Bottom="248" Content="10"/>
+                        <Label Canvas.Left="20" Canvas.Bottom="288" Content="20"/>
+                        <Label Canvas.Left="20" Canvas.Bottom="328" Content="30"/>
+                        <Label Canvas.Left="20" Canvas.Bottom="368" Content="40"/>
+                        <Label Canvas.Left="20" Canvas.Bottom="408" Content="50"/>
+                        <Label Canvas.Left="20" Canvas.Bottom="448" Content="60"/>
+                        <Label Canvas.Left="20" Canvas.Bottom="488" Content="70"/>
+                        <Label Canvas.Left="20" Canvas.Bottom="528" Content="t°С" FontWeight="Bold" />
+
+                        <Label Canvas.Left="73" Canvas.Bottom="190" Content="740"/>
+                        <Label Canvas.Left="113" Canvas.Bottom="190" Content="750"/>
+                        <Label Canvas.Left="153" Canvas.Bottom="190" Content="760"/>
+                        <Label Canvas.Left="193" Canvas.Bottom="190" Content="770"/>
+                        <Label Canvas.Left="233" Canvas.Bottom="190" Content="780"/>
+                        <Label Canvas.Left="273" Canvas.Bottom="190" Content="790"/>
+                        <Label Canvas.Left="313" Canvas.Bottom="190" Content="800"/>
+                        <Label Canvas.Left="353" Canvas.Bottom="190" Content="810"/>
+                        <Label Canvas.Left="393" Canvas.Bottom="190" Content="820"/>
+                        <Label Canvas.Left="433" Canvas.Bottom="190" Content="830"/>
+                        <Label Canvas.Left="473" Canvas.Bottom="190" Content="840"/>
+                        <Label Canvas.Left="513" Canvas.Bottom="190" Content="850"/>
+                        <Label x:Name="l1" Canvas.Left="538" Canvas.Bottom="190" Content="ρ кг/м^3" FontWeight="Bold"/>
+
+                    </Canvas>
+                </ScrollViewer>
+            </GroupBox>
+        </Grid>
+    </DockPanel>
+</Page>

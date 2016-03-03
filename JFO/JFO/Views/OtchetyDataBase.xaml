@@ -1,0 +1,181 @@
+﻿<Page x:Class="JFO.Views.OtchetyDataBase"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JFO.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="900"
+      Title="OtchetyDataBase" Background="{StaticResource LidhtBlueFon}" Style="{StaticResource FontsStyle}" Loaded="Page_Loaded">
+
+    <DockPanel x:Name="OtchetyDataPanel">
+        <Border  DockPanel.Dock="Top" BorderThickness="2,0,0,2"  Height="70" BorderBrush="AliceBlue"
+                 >
+            <TextBlock Text="База данных" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                       FontSize="24" FontWeight="Normal" Margin="9,29,0,0"/>
+        </Border>
+        <GroupBox x:Name="OtchetyDataMainBox" DockPanel.Dock="Top" >
+            <GroupBox.Header>
+                <Label Content="Отчеты по заводам" 
+                               FontSize="16" FontWeight="Bold"/>
+            </GroupBox.Header>
+            <Grid x:Name="OtchetyDataMainGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.46*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="28"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.55*"/>
+                    <RowDefinition Height="0.62*"/>
+                </Grid.RowDefinitions>
+                <StackPanel x:Name="ForUpButton" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left"
+                            Orientation="Horizontal">
+                    <Button x:Name="Zagruzka"  Width="25" Height="25"
+                                ToolTip="Загрузить базу данных" Margin="5,0,0,2" Click="Zagruzka_Click">
+                        <Image Source="/JFO;component/Images/LoadBase.png" Height="22" Width="22"
+                               />
+                    </Button>
+                    <Button x:Name="Updating"  Width="25" Height="25"
+                                ToolTip="Сохранить изменения в базе" Margin="5,0,0,2" Click="Updating_Click">
+                        <Image Source="/JFO;component/Images/UpdateBase.png" Height="22" Width="22"/>
+                    </Button>
+                </StackPanel>
+                <DataGrid x:Name="OtchetyDataGrid" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" 
+                          Height="200" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Visible" />
+                <GroupBox x:Name="DeleteOtchetyDataBox" Grid.Column="0" Grid.Row="2">
+                    <GroupBox.Header>
+                    <Label Content="Удалить строку" 
+                               FontSize="16" FontWeight="Bold"/>
+                    </GroupBox.Header>
+                    <Grid x:Name="DeleteOtchetyDataGrid" HorizontalAlignment="Left">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            
+                        </Grid.RowDefinitions>
+                        <Label x:Name="DelOtchetyDataLabel" Grid.Column="0" Grid.Row="0"
+                               Grid.ColumnSpan="2" Content="Введите ID строки для удаления"/>
+                        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+                            <TextBox x:Name="DelOtchetyDataTxt"  IsTabStop="False" MinWidth="164"/>
+                            <Button x:Name="DelOtchetyDataBtn" HorizontalAlignment="Left" 
+                                    Margin="2,0,2,2" ToolTip="Удалить строку" Click="DelOtchetyDataBtn_Click">
+                                <Image Source="/JFO;component/Images/cut.png" Height="18" Width="20"/>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+
+                </GroupBox>
+                <GroupBox x:Name="FindOtchetyData" Grid.Column="1" Grid.Row="2">
+                    <GroupBox.Header>
+                        <Label Content="Найти запись" 
+                               FontSize="16" FontWeight="Bold"/>
+                    </GroupBox.Header>
+                    <Grid x:Name="FindMopzOtchetyDataGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                           
+                        </Grid.RowDefinitions>
+                        <Label x:Name="FindFieldOtchetyLabel"  Grid.Column="0" Grid.Row="0"
+                            Content="Выберите столбец для поиска"/>
+                        <ComboBox x:Name="FindFieldOtchetyDataCombo" Grid.Column="1" Grid.Row="0" Height="20">
+                            <ComboBoxItem Content="ID"/>
+                            <ComboBoxItem Content="Date"/>
+                            <ComboBoxItem Content="Zavod"/>
+                        </ComboBox>
+                        <Label x:Name="FindWordOtchetyDataLabel" Grid.Column="0" Grid.Row="1"
+                               Content="Введите слово для поиска"/>
+                        <Grid Grid.Column="1" Grid.Row="1" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.45*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Name="FindWordOtchetyDataTxt" MaxWidth="400" MinWidth="197" 
+                                    Grid.Column="0" Margin="0,2,2,2"/>
+                            <Button x:Name="FindOtchetyDataBtn"  Margin="2,0,2,2" Grid.Column="1"
+                                 ToolTip="Найти записи" HorizontalAlignment="Right" Click="FindOtchetyDataBtn_Click">
+                                <Image Source="/JFO;component/Images/find.png" Height="18" Width="20"/>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="AddFileOtchetyDataBox" Grid.Column="0" Grid.Row="3">
+                    <GroupBox.Header>
+                        <Label Content="Добавить/извлечь файл"
+                               FontSize="16" FontWeight="Bold"/>
+                    </GroupBox.Header>
+                    <Grid x:Name="AddFileOtchetyDataGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label x:Name="AddFileOtchetyDataLabel" Grid.Column="0" Grid.Row="0"
+                               Grid.ColumnSpan="2" Content="Введите ID строки "/>
+                        <TextBox x:Name="AddFileOtchetyDataTxt" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" 
+                                 MinWidth="164"/>
+                        <StackPanel x:Name="ForAddFileButton" Grid.Column="0" Grid.Row="2"
+                                    Orientation="Horizontal" Grid.ColumnSpan="2" Margin="3,0,0,0">
+                            <Button x:Name="AddFileOtchetDataBtn" ToolTip="Добавить файл в базу данных" Click="AddFileOtchetDataBtn_Click">
+                                <Image Source="/JFO;component/Images/FileIn.png" Height="18" Width="20"/>
+                            </Button>
+                            <Button x:Name="ExtractFileMopzDataBtn" ToolTip="Извлечь файл из базы данных" Click="ExtractFileMopzDataBtn_Click">
+                                <Image Source="/JFO;component/Images/FileEx.png" Height="18" Width="20"/>
+                            </Button>
+                        </StackPanel>
+
+                    </Grid>
+
+                </GroupBox>
+                <GroupBox x:Name="SortOtchetyData" Grid.Column="1" Grid.Row="3">
+                    <GroupBox.Header>
+                        <Label Content="Сортировать записи"
+                               FontSize="16" FontWeight="Bold"/>
+                    </GroupBox.Header>
+                    <Grid x:Name="SortOtchetyDataGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label x:Name="SortFieldOtchetyLabel"  Grid.Column="0" Grid.Row="0"
+                            Content="Выберите столбец"/>
+                        <ComboBox x:Name="SortFieldOtchetyDataCombo" Grid.Column="1" Grid.Row="0" Height="20">
+                            <ComboBoxItem Content="ID"/>
+                            <ComboBoxItem Content="Date"/>
+                            <ComboBoxItem Content="Zavod"/>
+                           
+                        </ComboBox>
+                        <Label x:Name="SortWordOtchetyDataLabel" Grid.Column="0" Grid.Row="1"
+                               Content="Выберите направление"/>
+                        <ComboBox x:Name="SortNapravlenieOtchetyDataTxt" Grid.Column="1" Grid.Row="1" Height="20">
+                            <ComboBoxItem Content="По возрастанию"/>
+                            <ComboBoxItem Content="По убыванию"/>
+                        </ComboBox>
+                        <Button x:Name="SortOtchetyDataBtn" Grid.Column="1" Grid.Row="2" ToolTip="Сортировать строки" Click="SortOtchetyDataBtn_Click">
+                            <Image Source="/JFO;component/Images/sort.png" Height="18" Width="20"/>
+                        </Button>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </GroupBox>
+    </DockPanel>
+</Page>

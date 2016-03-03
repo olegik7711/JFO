@@ -1,0 +1,319 @@
+﻿<Page x:Class="JFO.Views.ProtocolGost10227"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JFO.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="900"
+      Title="ProtocolGost10227" Background="{StaticResource LidhtBlueFon}" Style="{StaticResource FontsStyle}">
+   
+
+    <DockPanel x:Name="ProtocolGostMainPanel" >
+      
+        <GroupBox x:Name="ProtocolGostMainBox" DockPanel.Dock="Top">
+            <GroupBox.Header>
+                <Label Content="Протокол испытаний по ГОСТ 10227" 
+                       FontSize="24" FontWeight="Normal"/>
+            </GroupBox.Header>
+            <Grid x:Name="ProtocolGostMainGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <GroupBox x:Name="FioProtGostBox" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+                    <GroupBox.Header>
+                        <Label Content="Введите данные для формирования протокола" 
+                               FontSize="16" FontWeight="Bold"/>
+                    </GroupBox.Header>
+                    <Grid HorizontalAlignment="Left">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.55*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="DateLabelProtGost" Grid.Column="0" Grid.Row="0"
+                               Content="Дата"/>
+                        <DatePicker x:Name="DateProtGostText" Grid.Column="1" Grid.Row="0"
+                                   Width="200" Height="25" HorizontalAlignment="Left" 
+                                    BorderBrush="Blue" BorderThickness="1" Margin="5,0,0,0"/>
+                        <Label x:Name="NameOfFuelProtGost" Grid.Column="0" Grid.Row="1"
+                               Content="Название образца топлива" />
+                        <TextBox x:Name="FuelNameProtGostTxt" Grid.Column="1" Grid.Row="1" Width="400"/>
+                        <Label x:Name="FioProtGostLabel" Grid.Column="0" Grid.Row="2"
+                               Content="Фамилия и инициалы исполнителя"/>
+                        <TextBox x:Name="FioProtGostTxt" Grid.Column="1" Grid.Row="2" Width="400" />
+                        <Label x:Name="DoljnostProtGostLabel" Grid.Column="0" Grid.Row="3"
+                               Content="Должность исполнителя"/>
+                        <TextBox x:Name="DoljnostProtGostTxt" Grid.Column="1" Grid.Row="3" Width="400"/>
+                    </Grid>
+                </GroupBox>
+               
+                    <GroupBox x:Name="ResultProtGostBox"  Grid.Column="0" Grid.Row="1"
+                              Grid.ColumnSpan="2" >
+                    <GroupBox.Header>
+                        <Label Content="Результаты испытаний" 
+                               FontSize="16" FontWeight="Bold"/>
+                    </GroupBox.Header>
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                            <Label x:Name="PlotnostProtGostLabel" Grid.Column="0" Grid.Row="0"
+                                   Content="1.Плотность при 20°С,кг/м3"/>
+                                <TextBox x:Name="PlotnostProtGostTxt" Grid.Column="1" Grid.Row="0"/>
+                            <Label x:Name="FrackSostavProtGostLabel" Grid.Column="0" Grid.Row="1"
+                                  Grid.ColumnSpan="2" Content="2.Фракционный состав: "/>
+                         
+                            <Label x:Name="FSNachKipeniaLabel" Grid.Column="0" Grid.Row="2"
+                                  Content="а) температура начала перегонки, °С:"/>
+                                <TextBox x:Name="FSNachKipeniaTxt" Grid.Column="1" Grid.Row="2"/>
+                                <Label x:Name="FSTemper10Label" Grid.Column="0" Grid.Row="3"
+                                  Content="б) 10 % отгоняется при температуре, °С:"/>
+                                <TextBox x:Name="FSTemper10Txt" Grid.Column="1" Grid.Row="3"/>
+                                <Label x:Name="FSTemper50Label" Grid.Column="0" Grid.Row="4"
+                                  Content="в) 50 % отгоняется при температуре, °С:"/>
+                                <TextBox x:Name="FSTemper50Txt" Grid.Column="1" Grid.Row="4"/>
+                                <Label x:Name="FSTemper90Label" Grid.Column="0" Grid.Row="5"
+                                  Content="г) 90 % отгоняется при температуре, °С:"/>
+                                <TextBox x:Name="FSTemper90Txt" Grid.Column="1" Grid.Row="5"/>
+                                <Label x:Name="FSTemper98Label" Grid.Column="0" Grid.Row="6"
+                                  Content="д) 98 % отгоняется при температуре, °С:"/>
+                                <TextBox x:Name="FSTemper98Txt" Grid.Column="1" Grid.Row="6"/>
+                                <Label x:Name="FSOstatok8Label" Grid.Column="0" Grid.Row="7"
+                                  Content="е) остаток от разгонки, %:"/>
+                                <TextBox x:Name="FSOstatokTxt" Grid.Column="1" Grid.Row="7"/>
+                                <Label x:Name="FSPoteryLabel" Grid.Column="0" Grid.Row="8"
+                                  Content="ж) потери от разгонки, %:"/>
+                                <TextBox x:Name="FSPoteryTxt" Grid.Column="1" Grid.Row="8"/>
+
+                                <Label x:Name="ViaskostProtGostLabel" Grid.Column="0" Grid.Row="9"
+                                  Grid.ColumnSpan="2" Content="3.Кинематическая вязкость, мм2/с (сСт) при температуре:"/>
+                                <Label x:Name="Viascost20Label" Grid.Column="0" Grid.Row="10"
+                                  Content="20°С:"/>
+                                <TextBox x:Name="Viascost20Txt" Grid.Column="1" Grid.Row="10"/>
+                                <Label x:Name="ViascostMinus40Label" Grid.Column="0" Grid.Row="11"
+                                  Content="минус 40°С:"/>
+                                <TextBox x:Name="ViascostMinus40Txt" Grid.Column="1" Grid.Row="11"/>
+                                <Label x:Name="ViascostMinus20Label" Grid.Column="0" Grid.Row="12"
+                                  Content="минус 20°С:"/>
+                                <TextBox x:Name="ViascostMinus20Txt" Grid.Column="1" Grid.Row="12"/>
+                            
+                                <Label x:Name="NizTeplotSgorLabel" Grid.Column="0" Grid.Row="13"
+                                  Content="4.Низшая теплота сгорания, кДж/кг:"/>
+                                <TextBox x:Name="NizTeplotSgorTxt" Grid.Column="1" Grid.Row="13"/>
+
+                                <Label x:Name="VNPGostLabel" Grid.Column="0" Grid.Row="14"
+                                  Content="5.Высота некоптящего пламени, мм:"/>
+                                <TextBox x:Name="VNPGostTxt" Grid.Column="1" Grid.Row="14"/>
+
+                                <Label x:Name="KOHGostLabel" Grid.Column="0" Grid.Row="15"
+                                  Content="6.Кислотность, мг КОН на 100 см3 топлива:"/>
+                                <TextBox x:Name="KOHGostTxt" Grid.Column="1" Grid.Row="15"/>
+
+                                <Label x:Name="IODGostLabel" Grid.Column="0" Grid.Row="16"
+                                  Content="7.Йодное число, г йода на 100 г топлива:"/>
+                                <TextBox x:Name="IODGostTxt" Grid.Column="1" Grid.Row="16"/>
+
+                                <Label x:Name="VspishkaGostLabel" Grid.Column="0" Grid.Row="17"
+                                  Content="8.Температура вспышки, определяемая в закрытом тигле,°С:"/>
+                                <TextBox x:Name="VspishkaGostTxt" Grid.Column="1" Grid.Row="17"/>
+
+                                <Label x:Name="KristallGostLabel" Grid.Column="0" Grid.Row="18"
+                                  Content="9.Температура начала кристаллизации,°С:"/>
+                                <TextBox x:Name="KristallGostTxt" Grid.Column="1" Grid.Row="18"/>
+
+                                <Label x:Name="TSRTProtGostLabel" Grid.Column="0" Grid.Row="19"
+                                  Grid.ColumnSpan="2" Content="10.Термоокислительная стабильность в статических условиях при 150 °С:"/>
+                                <Label x:Name="TSRTOsadokGostLabel" Grid.Column="0" Grid.Row="20"
+                                  Content="а) концентрация осадка, мг на 100 см3 топлива:"/>
+                                <TextBox x:Name="TSRTOsadokGostTxt" Grid.Column="1" Grid.Row="20"/>
+                                <Label x:Name="TSRTRastvorSmolyGostLabel" Grid.Column="0" Grid.Row="21"
+                                  Content="б) концентрация растворимых смол, мг на 100 см3 топлива:"/>
+                                <TextBox x:Name="TSRTHastvorSmolyGostTxt" Grid.Column="1" Grid.Row="21"/>
+                                <Label x:Name="TSRTNerastvorSmolyGostLabel" Grid.Column="0" Grid.Row="22"
+                                  Content="в) концентрация не растворимых смол, мг на 100 см3 топлива:"/>
+                                <TextBox x:Name="TSRTNerastvorSmolyGostTxt" Grid.Column="1" Grid.Row="22"/>
+
+                                <Label x:Name="AromaticaGostLabel" Grid.Column="0" Grid.Row="23"
+                                  Content="11.Объёмная (массовая) доля ароматических углеводородов,%:"/>
+                                <TextBox x:Name="AromaticaGostTxt" Grid.Column="1" Grid.Row="23"/>
+                            </Grid>
+                        <Grid Grid.Column="1" Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label x:Name="FactSmolyGostLabel" Grid.Column="0" Grid.Row="0"
+                                  Content="12.Концентрация фактических смол, мг на 100 см3 топлива:"/>
+                                <TextBox x:Name="FactSmolyGostTxt" Grid.Column="1" Grid.Row="0"/>
+
+
+                                <Label x:Name="SeraGostLabel" Grid.Column="0" Grid.Row="1"
+                                  Content="13.Массовая доля общей серы, %:"/>
+                                <TextBox x:Name="SeraGostTxt" Grid.Column="1" Grid.Row="1"/>
+
+                                <Label x:Name="MerkaptanyLabel" Grid.Column="0" Grid.Row="2"
+                                  Content="14. Массовая доля меркаптановой серы, %:"/>
+                                <TextBox x:Name="MerkaptanyGostTxt" Grid.Column="1" Grid.Row="2"/>
+
+                                <Label x:Name="SerovodorodGostLabel" Grid.Column="0" Grid.Row="3"
+                                  Content="15.Массовая доля сероводорода:"/>
+                                <TextBox x:Name="SerovodorodGostTxt" Grid.Column="1" Grid.Row="3"/>
+
+                                <Label x:Name="PlastinkaGostLabel" Grid.Column="0" Grid.Row="4"
+                                  Content="16.Испытание на медной пластинке при 100°С в течение 3ч: "/>
+                                <TextBox x:Name="PlastinkaGostTxt" Grid.Column="1" Grid.Row="4"/>
+
+                                <Label x:Name="ZolnostGostLabel" Grid.Column="0" Grid.Row="6"
+                                  Content="17. Зольность, %: "/>
+                                <TextBox x:Name="ZolnostGostTxt" Grid.Column="1" Grid.Row="6"/>
+
+                                <Label x:Name="SoderjanieKislotIChelochGostLabel" Grid.Column="0" Grid.Row="7"
+                                  Content="18.Содержание водорастворимых кислот и щелочей: "/>
+                                <TextBox x:Name="SoderjanieKislotIChelochGostTxt" Grid.Column="1" Grid.Row="7"/>
+
+                                <Label x:Name="MiloGostLabel" Grid.Column="0" Grid.Row="8"
+                                  Content="19.Содержание мыл нафтеновых кислот: "/>
+                                <TextBox x:Name="MiloGostTxt" Grid.Column="1" Grid.Row="8"/>
+
+                                <Label x:Name="MechprimesyGostLabel" Grid.Column="0" Grid.Row="9"
+                                  Content="20.Содержание механических примесей и воды: "/>
+                                <TextBox x:Name="MechprimesyGostTxt" Grid.Column="1" Grid.Row="9"/>
+
+                                <Label x:Name="NaftalinyGostLabel" Grid.Column="0" Grid.Row="10"
+                                  Content="21.Массовая доля нафталиновых углеводородов, %: "/>
+                                <TextBox x:Name="NaftalinyGostTxt" Grid.Column="1" Grid.Row="10"/>
+
+                                <Label x:Name="LCHGostLabel" Grid.Column="0" Grid.Row="11"
+                                  Content="22.Люминометрическое число: "/>
+                                <TextBox x:Name="LCHGostTxt" Grid.Column="1" Grid.Row="11"/>
+
+                                <Label x:Name="DTSGostLabel" Grid.Column="0" Grid.Row="12"
+                                  Grid.ColumnSpan="2" Content="23.Термоокислительная стабильность, определяемая динамическим методом при 150-180 °С:"/>
+                                <Label x:Name="DTSFiltrGostLabel" Grid.Column="0" Grid.Row="13"
+                                  Content="а) перепад давления на фильтре за 5 ч, кПа: "/>
+                                <TextBox x:Name="DTSFiltrGostTxt" Grid.Column="1" Grid.Row="13"/>
+                                <Label x:Name="DTSBallGostLabel" Grid.Column="0" Grid.Row="14"
+                                  Content="б) отложения на подогревателе, баллы: "/>
+                                <TextBox x:Name="DTSBallGostTxt" Grid.Column="1" Grid.Row="14"/>
+
+                                <Label x:Name="VzaimodeistvSVodoyGostLabel" Grid.Column="0" Grid.Row="15"
+                                  Grid.ColumnSpan="2" Content="24.Взаимодействие с водой, балл, не более:"/>
+                                <Label x:Name="SostPoverhnRazdelaGostLabel" Grid.Column="0" Grid.Row="16"
+                                  Content="а) состояние поверхности раздела: "/>
+                                <TextBox x:Name="SostPoverhnRazdelaTxt" Grid.Column="1" Grid.Row="16"/>
+                                <Label x:Name="SostRazdenFasGostLabel" Grid.Column="0" Grid.Row="17"
+                                  Content="б) состояние разделенных фаз: "/>
+                                <TextBox x:Name="SostRazdenFasTxt" Grid.Column="1" Grid.Row="17"/>
+
+                                <Label x:Name="ElectroprovodnostGostLabel" Grid.Column="0" Grid.Row="18"
+                                  Content="25.Удельная электрическая проводимость, пСм/м:"/>
+                                <TextBox x:Name="ElectroprovodnostGostTxt" Grid.Column="1" Grid.Row="18"/>
+
+                                <Label x:Name="DavlNasishParovGostLabel" Grid.Column="0" Grid.Row="19"
+                                  Content="26.Давление насыщенных паров, гПа (мм рт. ст.):"/>
+                                <TextBox x:Name="DavlNasishParovGostGostTxt" Grid.Column="1" Grid.Row="19"/>
+
+                                <Label x:Name="SummaVodorastvSchelochGostLabel" Grid.Column="0" Grid.Row="20"
+                                  Content="27. Содержание суммы водорастворимых щелочных соединений:"/>
+                                <TextBox x:Name="SummaVodorastvSchelochGostTxt" Grid.Column="1" Grid.Row="20"/>
+
+                                <Label x:Name="JFTOTGostLabel" Grid.Column="0" Grid.Row="21"
+                                  Grid.ColumnSpan="2" Content="28.Термоокислительная стабильность при контрольной температуре не ниже 260°С:"/>
+                                <Label x:Name="JFTOTFiltrGostLabel" Grid.Column="0" Grid.Row="22"
+                                  Content="а) перепад давления на фильтре, мм.рт.ст.: "/>
+                                <TextBox x:Name="JFTOTFiltrGostTxt" Grid.Column="1" Grid.Row="22"/>
+                                <Label x:Name="JFTOTBallGostLabel" Grid.Column="0" Grid.Row="23"
+                                  Content="б) отложения на подогревателе, баллы:"/>
+                                <TextBox x:Name="JFTOTBallGostTxt" Grid.Column="1" Grid.Row="23"/>
+
+
+                                <Button x:Name="MakeProtGostButton" 
+                                        Grid.Column="1" Grid.Row="24" HorizontalAlignment="Left" ToolTip="Сформировать протокол" 
+                                        Click="MakeProtGostButton_Click" Margin="5,2,2,2">
+                                    <Image Source="/JFO;component/Images/Protocol.png" Height="18" Width="20"/>
+                                </Button>
+                               
+
+                            </Grid>
+                    </Grid>
+                    </ScrollViewer>
+                </GroupBox>
+             
+            </Grid>
+        </GroupBox>
+    </DockPanel>
+</Page>
+
+

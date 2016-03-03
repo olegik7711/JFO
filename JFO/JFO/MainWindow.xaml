@@ -1,0 +1,91 @@
+﻿<Window x:Class="JFO.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JFO"
+          
+        mc:Ignorable="d"
+        Title="Калькулятор" Height="690" Width="910" 
+        WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Images/mainIcon.png" Loaded="Window_Loaded"   >
+   
+    <DockPanel >
+        <Menu x:Name="MainMenu" DockPanel.Dock="Top"   Height="30">
+            <MenuItem x:Name="FileItem" Header="Файл">
+               
+
+                    <MenuItem x:Name="PrintItem" Header="Печать" Click="PrintItem_Click" >
+                    <MenuItem.Icon>
+                        <Image Source="Images/print.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem x:Name="CloseItem" Header="Выход" Click="CloseItem_Click_1" >
+                    <MenuItem.Icon>
+                        <Image Source="Images/RedCross.png"  />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="CalculatorItem" Header="Калькулятор" >
+                <MenuItem x:Name="OpenCalculator" Header="Открыть калькулятор" Click="OpenCalculator_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Calculator.png"  />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="SaveCulculator" Header="Сохранить расчеты" Click="SaveCulculator_Click"
+                          UseLayoutRounding="True" IsEnabled="False" >
+                    <MenuItem.Icon>
+                        <Image Source="Images/save.png"  />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="Protocols" Header="Протоколы">
+                <MenuItem x:Name="ProtocolMopz" Header="Протокол МОПЗ" Click="ProtocolMopz_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/MopzBase.png"  />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="ProtocolGost"  Header="Протокол по ГОСТ 10227" Click="ProtocolGost_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/Gost.png"  />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="DataBaseItem" Header="Базы данных">
+                <MenuItem x:Name="MOPZMenuItem" Header="Испытания МОПЗ" Click="MOPZMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/MopzBase.png"  />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="VNIIMenuItem" Header="Испытания ВНИИ НП" Click="VNIIMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/VniiBase.png"  />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="HelpMenuItem" Header="Помощь">
+                <MenuItem x:Name="AboutProgramMenuItem" Header="О программе" Click="AboutProgramMenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/help.png"  />
+                    </MenuItem.Icon>
+                </MenuItem>
+                
+                <MenuItem x:Name="AboutPropertyFuelItem" Header="Информация о свойствах топлива" 
+                          Click="AboutPropertyFuelItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/help.png"  />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="AboutMethodsItem" Header="Информация о методах испытаний" Click="AboutMethodsItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Images/help.png"  />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+
+        </Menu>
+
+        <Frame x:Name="MainFraim" DockPanel.Dock="Top" NavigationUIVisibility="Hidden" ></Frame>
+       
+    </DockPanel>
+</Window>
